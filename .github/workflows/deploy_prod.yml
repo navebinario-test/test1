@@ -1,0 +1,16 @@
+name: Deploy to WP PROD
+
+on:
+  release:
+    types: [released]
+          
+jobs:
+  
+  init:
+    environment: prod
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        run: |
+          echo "${{ secrets.TEST }}"
